@@ -343,6 +343,27 @@
     .spot { padding-bottom: 0; }
     .spot .tag { position: static; display: block; transform: none !important; margin-top: 6px; text-align: center; white-space: normal; }
   }
+  /* =========== EXCHANGE =========== */
+  .exchange { margin-top: 48px; }
+  .exchange h2 { font-weight: 700; color: var(--zine); font-size: 22px; margin: 0 0 6px; }
+  .exchange .sub { color: var(--ink); font-size: 14.5px; font-weight: 300; margin: 0 0 20px; max-width: 72ch; line-height: 1.7; }
+  .ex-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+  .ex-card { background: #fff; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; }
+  .ex-art { background: #fff; display: grid; place-items: center; padding: 18px; height: 220px; border-bottom: 1px dashed var(--line); }
+  .ex-art img { display: block; max-width: 100%; max-height: 184px; width: auto; height: auto; }
+  .ex-body { padding: 16px 18px 18px; }
+  .ex-body h3 { margin: 0; font-size: 17px; font-weight: 700; }
+  .ex-vi { margin: 2px 0 0; color: var(--zine); font-weight: 700; text-transform: uppercase; font-size: 14px; }
+  .ex-from { margin: 6px 0 10px; color: var(--ink-soft); font-size: 12.5px; }
+  .ex-story { font-size: 13.5px; line-height: 1.65; font-weight: 300; max-height: 7.5em; overflow: hidden; position: relative; }
+  .ex-story.open { max-height: none; }
+  .ex-story p { margin: 0 0 10px; }
+  .ex-more { margin-top: 6px; background: none; border: 0; padding: 0; color: var(--clay); font-size: 13px; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+  .ex-invite { border: 1px dashed var(--leaf); background: var(--leaf-pale); justify-content: center; }
+  .ex-invite p { font-size: 13.5px; line-height: 1.65; font-weight: 300; margin: 8px 0 0; }
+  .ex-invite .ex-mail a { color: var(--clay); font-weight: 600; }
+  section.project { margin-top: 48px; padding-top: 0; border-top: 0; }
+  section.project h2 { font-weight: 700; color: var(--zine); font-size: 22px; margin: 0 0 4px; }
 </style>
 </head>
 <body>
@@ -379,11 +400,6 @@
         <p>When the vegetables are in season, the aunts start cooking and hosting big Vietnamese dinners. When we have a lot of rau cải, my mom will host a huge bánh xèo night. Other families might bring their vegetables over to share. Keeping a garden takes a lot of work. Maintaining a culture abroad does too. Vietnamese communities manage to do both, together.</p>
       </div>
     </div>
-    <div class="project">
-      <h3>About this project</h3>
-      <p class="small">Family garden study, 2024 · color pencil, alcohol markers, pen, paper, digital art</p>
-      <p>This project is a broad exploration of cultural heritage and community love carried through plants, oral history, and resource sharing. I sought to capture the meaning and memories embedded within the garden beds and potted plants of my family's backyard. Through the slow act of live drawing, exchanging conversations, and trimming trees, I experienced the different aspects of the garden. For many of these plants, I grew up only knowing the Vietnamese names and the ways they were used in my family. This project includes a drawn diagram of my family's backyard with information on each of the plants, gathered through interviews and memories with my family.</p>
-    </div>
   </section>
 
   <section class="index" aria-labelledby="index-title">
@@ -391,11 +407,18 @@
     <p class="sub">Numbers and letters match the labels on the plan.</p>
     <div id="groups"></div>
   </section>
-  <section class="contact" aria-labelledby="contact-title">
-    <h2 id="contact-title">Let's talk gardens</h2>
-    <p>I'd love to grow this into a broader set of cultural garden studies, beyond my family's backyard. If you keep a home food garden, have plant stories or recipes to share, or just want to chat, please reach out.</p>
-    <p class="email"><a href="mailto:mtonxenon@gmail.com">mtonxenon@gmail.com</a></p>
+  <section class="exchange" aria-labelledby="exchange-title">
+    <h2 id="exchange-title">Trao đổi · Exchange</h2>
+    <p class="sub">Gardens grow by sharing. I'd love to grow this into a broader set of cultural garden studies, beyond my family's backyard. If you keep a home food garden, send me a drawing or photo and a short story about something growing in it, and I'll add it here. Plant stories, recipes, or just wanting to chat about gardens are all welcome too.</p>
+    <div class="ex-grid" id="exchange"></div>
   </section>
+
+  <section class="project" aria-labelledby="project-title">
+      <h2 id="project-title">About this project</h2>
+      <p class="small">Family garden study, 2024 · color pencil, alcohol markers, pen, paper, digital art</p>
+      <p>This project is a broad exploration of cultural heritage and community love carried through plants, oral history, and resource sharing. I sought to capture the meaning and memories embedded within the garden beds and potted plants of my family's backyard. Through the slow act of live drawing, exchanging conversations, and trimming trees, I experienced the different aspects of the garden. For many of these plants, I grew up only knowing the Vietnamese names and the ways they were used in my family. This project includes a drawn diagram of my family's backyard with information on each of the plants, gathered through interviews and memories with my family.</p>
+  </section>
+
 </main>
 
 <!-- plan viewer -->
@@ -680,6 +703,25 @@ const PLANTS = [
     img: "chameleon.webp", scene: { x: 95, y: 56, size: 7 }, note: "" }
 ];
 
+// =====================================================================
+// EXCHANGE: drawings and stories other people share from their gardens.
+// To add one, copy the example between the [ ] below, remove the // at
+// the start of each line, and fill it in. For the drawing, upload the
+// image to GitHub next to index.html and put its exact file name in img.
+//
+//  {
+//    en: "Bitter melon",               // plant name in English
+//    vi: "khổ qua",                    // Vietnamese name (optional)
+//    by: "Name of the person",         // who shared it
+//    where: "Houston, TX",             // where their garden is (optional)
+//    img: "bitter-melon.png",          // their drawing (optional)
+//    story: "Their story goes here.\n\nA blank line starts a new paragraph."
+//  },
+// =====================================================================
+const EXCHANGE = [
+
+];
+
 /* Photos of the dishes, from Wikimedia Commons (free to reuse with credit).
    file = the file name on commons.wikimedia.org, by = the photographer */
 const DISH_PHOTOS = {
@@ -789,6 +831,34 @@ window.IMG = {
     });
     groupsEl.appendChild(g);
   });
+
+  /* ---------- exchange: drawings and stories shared by other people ---------- */
+  const exEl = $('exchange');
+  if (exEl) {
+    const list = (typeof EXCHANGE !== 'undefined') ? EXCHANGE : [];
+    exEl.innerHTML = list.map((e, n) => `
+      <article class="ex-card">
+        ${e.img ? `<div class="ex-art"><img src="${I(e.img)}" alt="Drawing of ${e.en || e.vi || 'a plant'}" loading="lazy"></div>` : ''}
+        <div class="ex-body">
+          <h3>${e.en || ''}</h3>
+          ${e.vi ? `<p class="ex-vi">${e.vi}</p>` : ''}
+          <p class="ex-from">shared by ${e.by || 'a friend'}${e.where ? ` · ${e.where}` : ''}</p>
+          <div class="ex-story" id="ex-story-${n}">${(e.story || '').split(/\n\s*\n/).map(t => `<p>${t}</p>`).join('')}</div>
+          ${(e.story || '').length > 260 ? `<button class="ex-more" data-t="ex-story-${n}">read more</button>` : ''}
+        </div>
+      </article>`).join('') + `
+      <article class="ex-card ex-invite">
+        <div class="ex-body">
+          <h3>Your garden here</h3>
+          <p>Grow something you love? Send a drawing (or photo) and a short story about it: what it is, where it grows, who taught you to grow it, what you cook with it. Or just write to say hi and talk gardens.</p>
+          <p class="ex-mail"><a href="mailto:mtonxenon@gmail.com?subject=Garden%20exchange">mtonxenon@gmail.com</a></p>
+        </div>
+      </article>`;
+    exEl.querySelectorAll('.ex-more').forEach(b => b.addEventListener('click', () => {
+      const t = $(b.dataset.t); const open = t.classList.toggle('open');
+      b.textContent = open ? 'show less' : 'read more';
+    }));
+  }
 
   /* ---------- plan viewer with a pin on every label ---------- */
   const stage = $('plan-stage'), tip = $('pin-tip');
