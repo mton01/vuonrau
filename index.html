@@ -276,7 +276,7 @@
   }
   /* =========== ZINE STYLE (Cascadia Mono, green) =========== */
   body { font-family: var(--mono); font-weight: 400; }
-  .intro h1 { font-weight: 700; color: var(--zine); font-size: clamp(26px, 3.3vw, 46px); letter-spacing: -.02em; line-height: 1.02; }
+  .intro h1 { font-weight: 700; color: var(--zine); font-size: clamp(22px, 2.6vw, 38px); letter-spacing: -.02em; line-height: 1.08; }
   .intro .meta { font-size: clamp(12px, 1vw, 14px); }
   .intro .hint, .text .kicker, .group h3, .spot .tag { font-family: var(--mono); }
   .plan-head h2, .index h2, .contact h2 { font-weight: 700; color: var(--zine); font-size: 22px; }
@@ -374,7 +374,7 @@
         <img data-img="plan.webp" alt="Drawn plan of the backyard with every plant numbered">
         <span class="cta">open the plan →</span>
       </button>
-      <h1>Family<br>Garden Study</h1>
+      <h1>Welcome to my Family's Garden</h1>
       <p class="meta">My family's backyard, drawn plant by plant, with what each one means to us.</p>
       <span class="hint">tap a plant to look closer →</span>
     </div>
@@ -394,10 +394,10 @@
         <figcaption>My dad in his garden</figcaption>
       </figure>
       <div class="essay">
-        <p>In every home I've lived in, my dad has always had a garden. He loves spending time there. Whenever we wanted him to be in a good mood, it was always a good idea to start a conversation about his garden. What fruits are in season right now? Are any plants flowering? The garden is his pride and joy. My siblings and I sometimes joke that he cares more about his plants than us.</p>
-        <p>But my dad isn't the only one who keeps a garden. My grandpa has one in his backyard, more focused on lotuses and flowers. He's even got koi fish. My uncle grows both flowers and vegetables. My best friend's dad has a big terrace garden; he was bragging about it when our dads ran into each other at the local Home Depot.</p>
-        <p>A lot of Vietnamese dishes call for very specific vegetables to be eaten with them that can't often be substituted with the common varieties found in American supermarkets. Vietnamese cuisine also tends to be very fresh as well. This has led to a lot of families growing home food gardens that are oriented towards edible plants and herbs.</p>
-        <p>When the vegetables are in season, the aunts start cooking and hosting big Vietnamese dinners. When we have a lot of rau cải, my mom will host a huge bánh xèo night. Other families might bring their vegetables over to share. Keeping a garden takes a lot of work. Maintaining a culture abroad does too. Vietnamese communities manage to do both, together.</p>
+        <p>In every home I've lived in, my dad has always cultivated a garden. He loves spending time there. Whenever we wanted him to be in a good mood, it was always a good idea to start a conversation about his garden. What fruits are in season right now? Are any plants flowering? The garden is his pride and joy. My siblings and I sometimes joke that he cares more about his plants than us.</p>
+        <p>But my dad isn't the only one who keeps a garden. My grandpa also has one, more focused on ornamentality with lotuses and flowers. He's even got koi fish. My uncle grows both flowers and vegetables. My best friend's dad has a big terrace in his; he was bragging about it when our dads ran into each other at the local Home Depot.</p>
+        <p>A lot of Vietnamese dishes call for very specific vegetables to be eaten with them that can't often be substituted with the common varieties found in American supermarkets. Vietnamese cuisine is often marked by a freshness, necessitating an abundance of fresh herbs to taste 'right'. This has led to a lot of families growing home food gardens that are oriented towards edible plants and herbs.</p>
+        <p>When the vegetables are in season, the aunts start cooking and hosting big Vietnamese dinners. When we have a lot of rau cải, my mom will host a huge bánh xèo night. Other families bring their own harvested vegetables over to share. Keeping a garden takes a lot of work. Maintaining a culture abroad does too. Vietnamese communities manage to do both, together.</p>
       </div>
     </div>
   </section>
@@ -494,7 +494,7 @@
 const PLANTS = [
   /* ---------- Drawn produce ---------- */
   {
-    id: "kaffir-lime", en: "Kaffir lime", vi: "chanh số 8", latin: "Citrus hystrix",
+    id: "kaffir-lime", en: "Kaffir lime", vi: "chanh Thái, chanh số 8", latin: "Citrus hystrix",
     spots: ["20", "22"], img: "lime.webp", scene: { x: 35.5, y: 20, size: 10.5 },
     note: "Leaves have a fragrant aroma, with a slightly bitter and spicy taste. Used for cooking, especially in meat dishes.",
     dishes: [
@@ -520,7 +520,7 @@ const PLANTS = [
   },
   {
     id: "vietnamese-cabbage", en: "Crucifers, Vietnamese cabbage", short: "Vietnamese cabbage", vi: "rau cải xanh", latin: "Brassica juncea",
-    zine: { notes: [["Có thể dùng để cuốn món đồ ăn khác", "Can be used to wrap other foods"], ["Giòn hơn và mỏng hơn bắp cải Mỹ (American cabbage)", "Crunchier and thinner than American cabbage"]], eat: [["bánh xèo", ""], ["canh", "soup"]] },
+    zine: { notes: [["Có thể dùng để cuốn các món ăn khác", "Can be used to wrap other foods"], ["Giòn hơn và mỏng hơn bắp cải Mỹ (American cabbage)", "Crunchier and thinner than American cabbage"]], eat: [["bánh xèo", ""], ["canh", "soup"]] },
     aka: "Chinese mustard greens",
     spots: ["E"], img: "cabbage.webp", scene: { x: 43.5, y: 79, size: 9 },
     note: "Grown to eat with dishes like Vietnamese crepes. Thinner in texture compared to American cabbage.",
@@ -559,7 +559,7 @@ const PLANTS = [
   {
     id: "perilla", en: "Vietnamese perilla", short: "Perilla", vi: "tía tô", latin: "Perilla frutescens var. crispa", aka: "shiso",
     spots: ["R"], img: "perilla.webp", scene: { x: 56, y: 80, size: 9 },
-    zine: { notes: [["Một loại rau thơm", "A fragrant herb"], ["Có thể bỏ trong xông hơi", "Can be added to an herbal steam"]], eat: [["bún riêu", ""], ["gỏi cuốn", ""], ["Ăn với tất cả món!", "Eat it with everything!"]] },
+    zine: { notes: [["Một loại rau thơm", "A fragrant herb"], ["Có thể bỏ vào nồi xông", "Can be added to an herbal steam"]], eat: [["bún riêu", ""], ["gỏi cuốn", ""], ["Ăn với tất cả món!", "Eat it with everything!"]] },
     note: "Grows in the mint bed with rau húng nhũi and rau húng cây."
   },
   {
@@ -616,7 +616,7 @@ const PLANTS = [
     note: "Less sweet than American corn. The kernels are also a lot softer." },
   { id: "lemongrass", en: "Lemongrass", vi: "sả", latin: "Cymbopogon citratus", spots: ["O"], note: "" },
   { id: "green-onion", en: "Green onion", vi: "hành", latin: "Allium fistulosum", spots: ["P"], note: "" },
-  { id: "rau-ram", en: "Vietnamese coriander", short: "Rau răm", vi: "rau răm", latin: "Persicaria odorata", spots: ["Q"],
+  { id: "rau-ram", en: "Vietnamese coriander", vi: "rau răm", latin: "Persicaria odorata", spots: ["Q"],
     zine: { notes: [["Cần nhiều nước", "Needs a lot of water"], ["Thường mọc gần nước như suối", "Often grows near water, like streams"]], eat: [["món gì mà có gà", "anything with chicken"], ["phở gà", ""], ["hột vịt lộn!!!!", "balut!!!!"]] },
     img: "rau-ram.webp", scene: { x: 68.5, y: 79, size: 9 },
     note: "An herb. I always need this to eat with balut egg.",
