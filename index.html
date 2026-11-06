@@ -330,6 +330,19 @@
   .dishes .dname { flex: 1; min-width: 0; }
   .dishes .credits { font-size: 11px; color: var(--ink-soft); margin: -10px 0 18px; line-height: 1.5; }
   .dishes .credits a { color: inherit; }
+  /* reference photo (plants without a drawing) */
+  .art { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; }
+  .art .locator { width: 100%; }
+  .ref { margin: 0; width: 100%; max-width: 460px; }
+  .ref img { display: block; width: 100%; height: 220px; object-fit: cover; border-radius: 12px; background: var(--leaf-pale); }
+  .ref figcaption { font-size: 11.5px; color: var(--ink-soft); margin-top: 6px; }
+  .ref figcaption a { color: inherit; }
+  @media (max-width: 760px) {
+    .ref img { height: 170px; }
+    /* labels sit in the flow on phones so the last row isn't cut off */
+    .spot { padding-bottom: 0; }
+    .spot .tag { position: static; display: block; transform: none !important; margin-top: 6px; text-align: center; white-space: normal; }
+  }
 </style>
 </head>
 <body>
@@ -451,6 +464,7 @@
    dishes  links to Vietnamese dishes made with it: [name, url]
    img     a drawing (only for the drawn produce)
    short   a shorter label for under the drawing (optional)
+   wiki    Wikipedia article for the reference photo, if the Latin name doesn't find it (optional)
    scene   where the drawing sits in the garden drawing: x, y in % ; size in % of width
    ===================================================================== */
 
@@ -462,7 +476,6 @@ const PLANTS = [
     note: "Leaves have a fragrant aroma, with a slightly bitter and spicy taste. Used for cooking, especially in meat dishes.",
     dishes: [
       ["Gà nướng lá chanh · grilled chicken in kaffir lime leaves", "https://wanderingchopsticks.blogspot.com/2011/08/ga-nuong-la-chanh-vietnamese-grilled.html"],
-      ["Gà nướng lá chanh · roasted chicken with lime leaves", "https://vickypham.com/blog/roasted-chicken-lemon-leaves/"]
     ]
   },
   {
@@ -479,8 +492,7 @@ const PLANTS = [
     spots: ["D"], img: "chrysanthemum.webp", scene: { x: 95, y: 12, size: 6.5 },
     note: "A vibrant and fragrant flower. It looks beautiful in the garden and tastes delicate when brewed into tea. My dad dries and brews it.",
     dishes: [
-      ["Trà hoa cúc · chrysanthemum tea", "https://en.wikipedia.org/wiki/Chrysanthemum_tea"],
-      ["Cách làm trà hoa cúc · how to make it (Vietnamese)", "https://hellobacsi.com/song-khoe/dinh-duong/cach-lam-tra-hoa-cuc/"]
+      ["Trà hoa cúc · chrysanthemum tea (recipe in Vietnamese)", "https://hellobacsi.com/song-khoe/dinh-duong/cach-lam-tra-hoa-cuc/"]
     ]
   },
   {
@@ -491,7 +503,6 @@ const PLANTS = [
     note: "Grown to eat with dishes like Vietnamese crepes. Thinner in texture compared to American cabbage.",
     dishes: [
       ["Bánh xèo · Vietnamese sizzling crepes", "https://www.vickypham.com/blog/vietnamese-sizzling-crepe-pancake-banh-xeo"],
-      ["Bánh xèo · Hungry Huy's family recipe", "https://www.hungryhuy.com/banh-xeo-savory-vietnamese-crepes/"]
     ]
   },
   {
@@ -502,7 +513,6 @@ const PLANTS = [
     note: "My mom grinds and boils the leaves to drink because it helps with her joint pain. The leaves are also used to make Vietnamese grilled beef wraps (my dad's favorite dish). Grown next to the fencing for shade cover.",
     dishes: [
       ["Bò lá lốt · beef wrapped in lolot leaves", "https://runawayrice.com/appetizers/beef-wrapped-in-betel-leaves-bo-la-lot/"],
-      ["Bò lá lốt · grilled lemongrass beef in lốt leaf", "https://mmbonappetit.com/bo-la-lot/"]
     ]
   },
   {
@@ -510,8 +520,7 @@ const PLANTS = [
     spots: ["M"], img: "arrowroot.webp", scene: { x: 6, y: 77, size: 7 },
     note: "Roots are boiled to eat. The leaves are often used to wrap foods like rice cake and Vietnamese pork pyramid dumplings. Often seen during periods of famine in Vietnam due to their ease of growth. Grown for one season, dormant in winter.",
     dishes: [
-      ["Bánh giò · pork pyramid dumplings", "https://www.hungryhuy.com/banh-gio-recipe/"],
-      ["Bánh giò · made with arrowroot starch", "https://www.wokandkin.com/banh-gio/"]
+      ["Bánh giò · pork pyramid dumplings, made with arrowroot starch", "https://www.wokandkin.com/banh-gio/"]
     ]
   },
   {
@@ -522,7 +531,6 @@ const PLANTS = [
     note: "Smaller leaves compared to other mints, oval-shaped with a slight curl. Has a light, sweet taste. The mint bed also grows rau húng cây and tía tô.",
     dishes: [
       ["Gỏi cuốn · fresh spring rolls", "https://grantourismotravels.com/vietnamese-fresh-prawn-and-pork-spring-rolls-recipe"],
-      ["Gỏi cuốn · fresh spring rolls with herbs", "https://healthynibblesandbits.com/fresh-vietnamese-spring-rolls"]
     ]
   },
   {
@@ -554,13 +562,12 @@ const PLANTS = [
   /* ---------- In-ground grows ---------- */
   { id: "purslane", en: "Purslane", vi: "rau sam", latin: "Portulaca oleracea", spots: ["A"],
     note: "My mom uses it to make soups." },
-  { id: "winter-melon", en: "Winter melon", vi: "bí đao", latin: "Benincasa hispida", spots: ["B"],
+  { id: "winter-melon", wiki: "Wax gourd", en: "Winter melon", vi: "bí đao", latin: "Benincasa hispida", spots: ["B"],
     note: "Annually grown, used to make many various Vietnamese dishes. Produces yellow flowers.",
     dishes: [
       ["Canh bí đao tôm · winter melon soup with shrimp", "https://vickypham.com/blog/winter-melon-soup-with-shrimp-canh-bi-dao-tom/"],
-      ["Canh bí đao · winter melon soup", "https://mmbonappetit.com/canh-bi-dao/"]
     ] },
-  { id: "white-gourd", en: "White gourd", vi: "trái bầu sao", latin: "Lagenaria siceraria", spots: ["C"],
+  { id: "white-gourd", wiki: "Calabash", en: "White gourd", vi: "trái bầu sao", latin: "Lagenaria siceraria", spots: ["C"],
     note: "Annually grown, used mainly to make soups. Produces white flowers. Easier fruit bearing but shorter lifespan. Used to make white gourd drink and soups." },
   { id: "sweet-potato", en: "Sweet potato", vi: "khoai lang", latin: "Ipomoea batatas", spots: ["F"],
     note: "Grown more for the leaves, to eat and put in soup." },
@@ -570,7 +577,6 @@ const PLANTS = [
     note: "Used for cooking. Typically the leaf used to make garlic water spinach.",
     dishes: [
       ["Rau muống xào tỏi · garlic water spinach", "https://vickypham.com/blog/simple-water-spinach-stir-fry/"],
-      ["Rau muống xào tỏi · stir-fried with garlic", "https://www.savorysweetspoon.com/rau-muong/"]
     ] },
 
   /* ---------- Garden beds ---------- */
@@ -578,13 +584,12 @@ const PLANTS = [
     note: "Used to make a refreshing drink.",
     dishes: [
       ["Nước rau má · pennywort drink", "https://www.wokandkin.com/pennywort-drink/"],
-      ["Nước rau má · pennywort juice", "https://runawayrice.com/drinks/pennywort-juice/"]
     ] },
   { id: "papaya", en: "Papaya", vi: "đu đủ", latin: "Carica papaya", spots: ["K"],
     note: "Has really proliferated in the garden because they grow easily and rapidly." },
   { id: "garlic-chives", en: "Garlic chives", vi: "hẹ", latin: "Allium tuberosum", spots: ["L"],
     note: "Often used in stir-fried dishes." },
-  { id: "corn", en: "Vietnamese corn", vi: "bắp nếp Việt Nam", latin: "Zea mays", spots: ["N"],
+  { id: "corn", wiki: "Maize", en: "Vietnamese corn", vi: "bắp nếp Việt Nam", latin: "Zea mays", spots: ["N"],
     note: "Less sweet than American corn. The kernels are also a lot softer." },
   { id: "lemongrass", en: "Lemongrass", vi: "sả", latin: "Cymbopogon citratus", spots: ["O"], note: "" },
   { id: "green-onion", en: "Green onion", vi: "hành", latin: "Allium fistulosum", spots: ["P"], note: "" },
@@ -621,7 +626,7 @@ const PLANTS = [
   { id: "culantro", en: "Culantro", vi: "ngò gai", latin: "Eryngium foetidum", spots: ["19", "63", "76"],
     note: "Leaves used for cooking, leaving a distinct and strong taste. Most notably put in phở.",
     dishes: [["Phở bò · beef noodle soup", "https://en.wikibooks.org/wiki/Cookbook:Ph%E1%BB%9F_b%C3%B2"]] },
-  { id: "rose", en: "Rose", vi: "cây hoa hồng", latin: "Rosa spp.", spots: ["21", "27"],
+  { id: "rose", wiki: "Rose", en: "Rose", vi: "cây hoa hồng", latin: "Rosa spp.", spots: ["21", "27"],
     note: "My mom's favorite. She loves pretty, aromatic flowers." },
   { id: "longan", en: "Longan tree", vi: "cây long nhãn", latin: "Dimocarpus longan", spots: ["24", "52"],
     note: "My favorite fruit to eat growing up. Similar to the lychee but easier to peel, more sweet than it is tart." },
@@ -629,15 +634,15 @@ const PLANTS = [
     note: "Leaves used for cooking, especially in curries." },
   { id: "pomegranate", en: "Pomegranate tree", vi: "cây lựu", latin: "Punica granatum", spots: ["26"],
     note: "Given from our backyard neighbor as young saplings, now bent together as an ornamental plant. More decorative than for growing pomegranates." },
-  { id: "lime", en: "Lime tree", vi: "cây chanh", latin: "Citrus × aurantiifolia", spots: ["28", "36", "37"], note: "" },
+  { id: "lime", wiki: "Key lime", en: "Lime tree", vi: "cây chanh", latin: "Citrus × aurantiifolia", spots: ["28", "36", "37"], note: "" },
   { id: "golden-cassia", en: "Golden cassia", vi: "cây mai Thái", latin: "", spots: ["29", "38"],
     note: "Pretty leaf colors blooming around Lunar New Year. A cheaper alternative to the mai tree." },
   { id: "aloe", en: "Aloe vera", vi: "cây lô hội", latin: "Aloe vera", spots: ["30", "66", "67", "68"],
     note: "Used for drinks and for medicinal purposes." },
   { id: "star-jasmine", en: "Star jasmine", vi: "", latin: "Trachelospermum jasminoides", spots: ["31", "54"], note: "" },
-  { id: "calamansi", en: "Calamansi tree", vi: "cây trái tắc", latin: "Citrus × microcarpa", spots: ["33"],
+  { id: "calamansi", wiki: "Calamansi", en: "Calamansi tree", vi: "cây trái tắc", latin: "Citrus × microcarpa", spots: ["33"],
     note: "Small citrus fruit with a light, sour taste. I love to put it in sugar cane juice." },
-  { id: "thai-guava", en: "Thai guava", vi: "cây ổi Thái", latin: "Psidium guajava", spots: ["34", "35", "44"], bonsai: ["44"],
+  { id: "thai-guava", wiki: "Guava", en: "Thai guava", vi: "cây ổi Thái", latin: "Psidium guajava", spots: ["34", "35", "44"], bonsai: ["44"],
     note: "My dad's favorite. A crunchy, sweet fruit with a touch of tanginess, grown from seed." },
   { id: "royal-poinciana", en: "Royal poinciana", vi: "cây phượng", latin: "Delonix regia", spots: ["39"],
     note: "Produces red, fiery flowers in the summer. A fast-growing tree." },
@@ -657,9 +662,9 @@ const PLANTS = [
     dishes: [["Xôi lá cẩm · purple sticky rice", "https://vickypham.com/blog/magenta-sticky-xoi-la-cam-rice-cooker/"]] },
   { id: "pineapple", en: "Pineapple", vi: "thơm, dứa", latin: "Ananas comosus", spots: ["51"],
     note: "My sister's absolute favorite fruit. Newly planted, we have not been able to harvest a pineapple yet." },
-  { id: "bougainvillea", en: "Bougainvillea (purple and red)", vi: "hoa giấy", latin: "Bougainvillea spp.", spots: ["53", "56", "75"], bonsai: ["75"],
+  { id: "bougainvillea", wiki: "Bougainvillea", en: "Bougainvillea (purple and red)", vi: "hoa giấy", latin: "Bougainvillea spp.", spots: ["53", "56", "75"], bonsai: ["75"],
     note: "My dad decoratively shapes the roots to wrap. The tree also produces pretty flowers." },
-  { id: "snake-plant", en: "Snake plant (yellow and green)", vi: "lưỡi hổ", latin: "Dracaena trifasciata", spots: ["57", "62", "79"], note: "" },
+  { id: "snake-plant", wiki: "Dracaena trifasciata", en: "Snake plant (yellow and green)", vi: "lưỡi hổ", latin: "Dracaena trifasciata", spots: ["57", "62", "79"], note: "" },
   { id: "bay-laurel", en: "Bay laurel tree", vi: "cây nguyệt quế", latin: "", spots: ["58"], bonsai: ["58"],
     note: "Popularly grown in Vietnam to bring success and fortune. Signifies victory. My dad likes to shape it." },
   { id: "yesterday-today-tomorrow", en: "Yesterday, today, tomorrow", vi: "", latin: "Brunfelsia pauciflora", spots: ["61"],
@@ -668,7 +673,7 @@ const PLANTS = [
     note: "My dad's favorite bonsai." },
   { id: "donkeys-tail", en: "Donkey's tail", vi: "cây chuỗi ngọc", latin: "", spots: ["71", "73", "74"],
     note: "Looks like a chain of jade after blooming flowers." },
-  { id: "bamboo", en: "Bamboo", vi: "cây tre", latin: "Bambusa sp.", spots: ["72"], note: "" },
+  { id: "bamboo", wiki: "Bambusa", en: "Bamboo", vi: "cây tre", latin: "Bambusa sp.", spots: ["72"], note: "" },
   { id: "chameleon-plant", en: "Chameleon plant", vi: "diếp cá", latin: "Houttuynia cordata", spots: ["78"],
     zine: { notes: [["Mùi giống như cá", "Smells like fish"], ["Mùi đậm", "A strong smell"], ["Nhiều người không thích", "A lot of people don't like it"]], eat: [["bún thịt nướng", ""], ["bánh ướt", ""], ["gỏi cuốn", ""]] },
     aka: "fish mint",
@@ -834,6 +839,32 @@ window.IMG = {
     img.style.top = (H / 2 - pt[1] / 100 * ih) + 'px';
   }
 
+  /* reference photo for plants without a drawing: the lead photo of the plant's Wikipedia article */
+  const refCache = {};
+  function refTitle(p) {
+    if (p.wiki) return p.wiki;
+    if (!p.latin) return '';
+    return p.latin.replace(/ (spp?\.|var\..*)$/, '').trim();
+  }
+  async function loadRef(p, fig) {
+    const title = refTitle(p);
+    if (!title || !fig) return;
+    try {
+      if (!(title in refCache)) {
+        const r = await fetch('https://en.wikipedia.org/api/rest_v1/page/summary/' + encodeURIComponent(title.replace(/ /g, '_')));
+        refCache[title] = r.ok ? await r.json() : null;
+      }
+      const d = refCache[title];
+      const src = d && (d.thumbnail || d.originalimage) && (d.thumbnail || d.originalimage).source;
+      if (!src || !fig.isConnected) return;
+      fig.querySelector('img').src = src;
+      fig.querySelector('img').alt = 'Reference photo of ' + p.en;
+      const page = d.content_urls && d.content_urls.desktop ? d.content_urls.desktop.page : '#';
+      fig.querySelector('figcaption').innerHTML = `Reference photo · <a href="${page}" target="_blank" rel="noopener">Wikipedia</a>`;
+      fig.hidden = false;
+    } catch (e) { /* no photo: leave the plan on its own */ }
+  }
+
   function fill(i, label) {
     const p = PLANTS[i];
     current = i;
@@ -891,7 +922,8 @@ window.IMG = {
       art.innerHTML = `<img src="${I(p.img)}" alt="Drawing of ${p.en}">`;
       where.innerHTML = `<h4>On the plan${many ? ` · grows in ${p.spots.length} spots` : ''}</h4>${labelsHTML}${locatorHTML()}`;
     } else {
-      art.innerHTML = locatorHTML();
+      art.innerHTML = `<figure class="ref" hidden><img alt=""><figcaption></figcaption></figure>` + locatorHTML();
+      loadRef(p, art.querySelector('.ref'));
       where.innerHTML = many ? `<h4>Grows in ${p.spots.length} spots</h4>${labelsHTML}` : '';
     }
     const artImg = art.querySelector(':scope > img');
