@@ -17,7 +17,7 @@ const PLANTS = [
   /* ---------- Drawn produce ---------- */
   {
     id: "kaffir-lime", en: "Kaffir lime", vi: "chanh số 8", latin: "Citrus hystrix",
-    spots: ["20", "22"], img: "img/lime.webp", scene: { x: 37.5, y: 45, size: 9 },
+    spots: ["20", "22"], img: "lime.webp", scene: { x: 37.5, y: 45, size: 9 },
     note: "Leaves have a fragrant aroma, with a slightly bitter and spicy taste. Used for cooking, especially in meat dishes.",
     dishes: [
       ["Gà nướng lá chanh · grilled chicken in kaffir lime leaves", "https://wanderingchopsticks.blogspot.com/2011/08/ga-nuong-la-chanh-vietnamese-grilled.html"],
@@ -26,7 +26,7 @@ const PLANTS = [
   },
   {
     id: "red-ruby-guava", en: "Red ruby guava", vi: "cây ổi xá lị", latin: "Psidium guajava",
-    spots: ["42"], img: "img/guava.webp", scene: { x: 45, y: 17, size: 8 },
+    spots: ["42"], img: "guava.webp", scene: { x: 45, y: 17, size: 8 },
     note: "My dad's favorite fruit. Colors in the fruit are as rich as the flavor. Store bought, very sweet but not crunchy.",
     dishes: [
       ["Muối ớt · chili salt for dipping fruit", "https://www.wokandkin.com/wprm_print/muoi-ot-vietnamese-chili-salt"],
@@ -35,7 +35,7 @@ const PLANTS = [
   },
   {
     id: "chrysanthemum", en: "Chrysanthemum", vi: "hoa cúc", latin: "Chrysanthemum × morifolium",
-    spots: ["D"], img: "img/chrysanthemum.webp", scene: { x: 64, y: 33, size: 5.5 },
+    spots: ["D"], img: "chrysanthemum.webp", scene: { x: 64, y: 33, size: 5.5 },
     note: "A vibrant and fragrant flower. It looks beautiful in the garden and tastes delicate when brewed into tea. My dad dries and brews it.",
     dishes: [
       ["Trà hoa cúc · chrysanthemum tea", "https://en.wikipedia.org/wiki/Chrysanthemum_tea"],
@@ -44,7 +44,7 @@ const PLANTS = [
   },
   {
     id: "vietnamese-cabbage", en: "Crucifers, Vietnamese cabbage", vi: "rau cải", latin: "Brassica juncea",
-    spots: ["E"], img: "img/cabbage.webp", scene: { x: 79, y: 57, size: 6 },
+    spots: ["E"], img: "cabbage.webp", scene: { x: 79, y: 57, size: 6 },
     note: "Grown to eat with dishes like Vietnamese crepes. Thinner in texture compared to American cabbage.",
     dishes: [
       ["Bánh xèo · Vietnamese sizzling crepes", "https://www.vickypham.com/blog/vietnamese-sizzling-crepe-pancake-banh-xeo"],
@@ -53,7 +53,7 @@ const PLANTS = [
   },
   {
     id: "piper-lolot", en: "Piper lolot", vi: "rau lá lốt", latin: "Piper sarmentosum",
-    spots: ["I"], img: "img/lolot.webp", scene: { x: 93, y: 30, size: 3 },
+    spots: ["I"], img: "lolot.webp", scene: { x: 93, y: 30, size: 3 },
     note: "My mom grinds and boils the leaves to drink because it helps with her joint pain. The leaves are also used to make Vietnamese grilled beef wraps (my dad's favorite dish). Grown next to the fencing for shade cover.",
     dishes: [
       ["Bò lá lốt · beef wrapped in lolot leaves", "https://runawayrice.com/appetizers/beef-wrapped-in-betel-leaves-bo-la-lot/"],
@@ -62,7 +62,7 @@ const PLANTS = [
   },
   {
     id: "arrowroot", en: "Arrowroot", vi: "củ bình tinh", latin: "Maranta arundinacea",
-    spots: ["M"], img: "img/arrowroot.webp", scene: { x: 51, y: 68, size: 5.5 },
+    spots: ["M"], img: "arrowroot.webp", scene: { x: 51, y: 68, size: 5.5 },
     note: "Roots are boiled to eat. The leaves are often used to wrap foods like rice cake and Vietnamese pork pyramid dumplings. Often seen during periods of famine in Vietnam due to their ease of growth. Grown for one season, dormant in winter.",
     dishes: [
       ["Bánh giò · pork pyramid dumplings", "https://www.hungryhuy.com/banh-gio-recipe/"],
@@ -71,7 +71,7 @@ const PLANTS = [
   },
   {
     id: "spearmint", en: "Vietnamese spearmint", vi: "rau húng nhũi", latin: "Mentha spicata",
-    spots: ["R"], img: "img/spearmint.webp", scene: { x: 72, y: 70, size: 5 },
+    spots: ["R"], img: "spearmint.webp", scene: { x: 72, y: 70, size: 5 },
     note: "Smaller leaves compared to other mints, oval-shaped with a slight curl. Has a light, sweet taste. The mint bed also grows rau húng cây and tía tô.",
     dishes: [
       ["Gỏi cuốn · fresh spring rolls", "https://grantourismotravels.com/vietnamese-fresh-prawn-and-pork-spring-rolls-recipe"],
@@ -80,7 +80,7 @@ const PLANTS = [
   },
   {
     id: "thai-basil", en: "Thai basil", vi: "lá quế", latin: "Ocimum basilicum var. thyrsiflora",
-    spots: ["S"], img: "img/thai-basil.webp", scene: { x: 87, y: 48, size: 4.2 },
+    spots: ["S"], img: "thai-basil.webp", scene: { x: 87, y: 48, size: 4.2 },
     note: "One of the more popular Asian herbs, often put in noodle soups, salads, and wraps.",
     dishes: [
       ["Phở bò · beef noodle soup", "https://en.wikibooks.org/wiki/Cookbook:Ph%E1%BB%9F_b%C3%B2"],
@@ -89,7 +89,7 @@ const PLANTS = [
   },
   {
     id: "taro", en: "Taro", vi: "khoai môn", latin: "Colocasia esculenta",
-    spots: ["T"], img: "img/taro.webp", scene: { x: 57, y: 85, size: 2.6 },
+    spots: ["T"], img: "taro.webp", scene: { x: 57, y: 85, size: 2.6 },
     note: "The roots are a popular element in Vietnamese cooking. Often put into desserts or used to flavor cakes.",
     dishes: [
       ["Chè khoai môn · taro pudding", "https://takestwoeggs.com/taro-pudding-che-khoai-mon/"],
@@ -143,7 +143,7 @@ const PLANTS = [
 
   /* ---------- Trees, shrubs and pots around the yard ---------- */
   { id: "pandan", en: "Pandan tree", vi: "cây lá dứa", latin: "Pandanus amaryllifolius", spots: ["1"],
-    img: "img/pandan.webp", scene: { x: 33, y: 80, size: 7 },
+    img: "pandan.webp", scene: { x: 33, y: 80, size: 7 },
     note: "Used to make cake and desserts. Given to my dad by his mother before she passed.",
     dishes: [["Bánh da lợn · steamed pandan layer cake", "https://vickypham.com/blog/vietnamese-steamed-layer-cake/"]] },
   { id: "chili", en: "Chili pepper tree", vi: "cây ớt", latin: "Capsicum frutescens", spots: ["2", "3"],
@@ -212,7 +212,7 @@ const PLANTS = [
     note: "Looks like a chain of jade after blooming flowers." },
   { id: "bamboo", en: "Bamboo", vi: "cây tre", latin: "Bambusa sp.", spots: ["72"], note: "" },
   { id: "chameleon-plant", en: "Chameleon plant", vi: "diếp cá", latin: "Houttuynia cordata", spots: ["78"],
-    img: "img/chameleon.webp", scene: { x: 96, y: 75, size: 8 }, note: "" }
+    img: "chameleon.webp", scene: { x: 96, y: 75, size: 8 }, note: "" }
 ];
 
 /* Where each label sits on the plan drawing, in % of its width / height */

@@ -273,7 +273,7 @@
   <section class="hero">
     <div class="intro">
       <button class="plan-thumb" id="plan-thumb" aria-label="Open the plan of the whole backyard">
-        <img src="img/plan.webp" alt="Drawn plan of the backyard with every plant numbered">
+        <img src="plan.webp" alt="Drawn plan of the backyard with every plant numbered">
         <span class="cta">open the plan →</span>
       </button>
       <h1>Family<br>Garden Study</h1>
@@ -281,7 +281,7 @@
       <span class="hint">tap a plant to look closer →</span>
     </div>
     <div class="scene" id="scene">
-      <img class="bg" src="img/garden.webp" alt="Colored-pencil drawing of the backyard: a wooden trellis with climbing vines, a wrought-iron bench, potted plants, a papaya tree and raised vegetable beds.">
+      <img class="bg" src="garden.webp" alt="Colored-pencil drawing of the backyard: a wooden trellis with climbing vines, a wrought-iron bench, potted plants, a papaya tree and raised vegetable beds.">
     </div>
   </section>
 
@@ -309,7 +309,7 @@
       <p>Tap any number or letter to meet that plant.</p>
     </div>
     <div class="plan-stage" id="plan-stage">
-      <img src="img/plan.webp" alt="Plan of the backyard">
+      <img src="plan.webp" alt="Plan of the backyard">
       <div class="pin-tip" id="pin-tip"></div>
     </div>
     <div class="soil">
@@ -451,7 +451,7 @@
   function remember() { focusStack.push(document.activeElement); }
 
   function locatorHTML() {
-    return `<div class="locator" title="Open the full plan"><img src="img/plan.webp" alt=""><span class="ring"></span></div>`;
+    return `<div class="locator" title="Open the full plan"><img src="plan.webp" alt=""><span class="ring"></span></div>`;
   }
   function placeLocator(box, label) {
     const pt = PLAN_POINTS[label]; if (!pt || !box) return;
